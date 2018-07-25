@@ -1,6 +1,7 @@
 module OpenIDConnect
   class Client < Rack::OAuth2::Client
     attr_optional :userinfo_endpoint, :expires_in
+    attr_reader :forced_token_type
 
     def initialize(attributes = {})
       super attributes
@@ -27,7 +28,7 @@ module OpenIDConnect
 
     def handle_success_response(response)
       token_hash = JSON.parse(response.body).with_indifferent_access
-      token_type = (@forced_token_type || token_hash[:token_type]).try(:downcase)
+      token_type = (forced_token_type || token_hash[:token_type]).try(:downcase)
       case token_type
       when 'bearer'
         AccessToken.new token_hash.merge(client: self)

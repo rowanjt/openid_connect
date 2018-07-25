@@ -6,6 +6,7 @@ module OpenIDConnect
 
         def issuer
           self.link_for(REL_VALUE)[:href]
+          # self[:issuer]
         end
       end
 

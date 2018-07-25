@@ -1,9 +1,9 @@
 Gem::Specification.new do |s|
   s.name        = "openid_connect"
   s.version     = File.read("VERSION")
-  s.authors     = ["nov matake"]
-  s.email       = ["nov@matake.jp"]
-  s.homepage    = "https://github.com/nov/openid_connect"
+  s.authors     = ["John Doe"]
+  s.email       = ["john.doe@gmail.com"]
+  # s.homepage    = "https://github.com/nov/openid_connect"
   s.summary     = %q{OpenID Connect Server & Client Library}
   s.description = %q{OpenID Connect Server & Client Library}
   s.license     = 'MIT'
